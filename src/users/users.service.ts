@@ -33,6 +33,18 @@ export class UsersService {
     return user;
   }
 
+  findOneOrders() {
+   
+    const orders = [
+      {
+          "id": 1,
+          "order": "phone",
+          "product": "samsung"
+      }
+  ];
+  return orders
+  }
+
   create(dto: CreateUserDto): User {
     const emailExists = this.users.some((user) => user.email === dto.email);
 

@@ -26,6 +26,11 @@ export class UsersController {
     return this.usersService.findOne(id);
   }
 
+  @Get('orders')
+  findOneOrders(@Param('id', ParseIntPipe) id: number) {
+    return this.usersService.findOneOrders();
+  }
+
   @Post()
   create(@Body() dto: CreateUserDto) {
     return this.usersService.create(dto);
