@@ -1,4 +1,4 @@
-name: NestJS CI
+\name: NestJS CI
 
 on:
   push:
@@ -46,7 +46,7 @@ jobs:
           npm ls ajv --all || true
 
       - name: Install dependencies
-        run: npm ci
+        run: .github/workflows/ci.yml
 
       - name: Run tests
         run: npm test
