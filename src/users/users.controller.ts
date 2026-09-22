@@ -21,15 +21,18 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
+   // Static route FIRST
+   @Get('/orders')
+   findOneOrders() {
+     return this.usersService.findOneOrders();
+   }
+
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number) {
     return this.usersService.findOne(id);
   }
 
-  @Get('/orders')
-  findOneOrders() {
-    return this.usersService.findOneOrders();
-  }
+ 
 
   @Post()
   create(@Body() dto: CreateUserDto) {
