@@ -22,6 +22,29 @@ jobs:
         with:
           node-version: 22
 
+      - name: Debug environment
+        run: |
+          echo "=== Node ==="
+          node --version
+
+          echo "=== npm ==="
+          npm --version
+
+          echo "=== Commit ==="
+          git rev-parse HEAD
+
+          echo "=== Lockfile ==="
+          grep '"lockfileVersion"' package-lock.json
+
+          echo "=== package.json NestJS ==="
+          grep '"@nestjs/core"\|"@nestjs/platform-express"' package.json
+
+          echo "=== AJV in lockfile ==="
+          grep -n '"node_modules/ajv"' package-lock.json | head
+
+          echo "=== AJV versions ==="
+          npm ls ajv --all || true
+
       - name: Install dependencies
         run: npm ci
 
