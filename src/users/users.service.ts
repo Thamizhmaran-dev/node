@@ -34,15 +34,15 @@ export class UsersService {
   }
 
   findOneOrders() {
-   
     const orders = [
       {
-          "id": 1,
-          "order": "phone",
-          "product": "samsung"
-      }
-  ];
-  return orders
+        id: 1,
+        order: 'phone',
+        product: 'samsung',
+      },
+    ];
+  
+    return orders;
   }
 
   create(dto: CreateUserDto): User {
