@@ -46,7 +46,7 @@ jobs:
           npm ls ajv --all || true
 
       - name: Install dependencies
-        run: .github/workflows/ci.yml
+        run: npm ci --legacy-peer-deps
 
       - name: Run tests
         run: npm test
